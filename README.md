@@ -21,11 +21,11 @@ Each user has a unique name. Below there is given a picture of a sample user pro
 
 ![alt text](https://github.com/Dola108/1Tag.github.io/blob/master/pix/profile_image.png)
 
-User profile got a section where all the pictures he/she ever posted all saved together. There is a information section also which contains information about the user. User can also change profile picture or delete the account. Account deletion process has to wait until admins allow it to be deleted. Details on the admin page is described in the admin section.
+There is a pictures section in the user profile where all the pictures he/she ever posted are all saved together. The information section there contains information about the user. User can also change the profile avatar or delete the account. Account deletion process has to wait until the admins allow it to be deleted. Details on the admin page is described in the admin section.
 
 ## Dashboard
 
-This is the page user will see right after logging in. There is the option to create a new post with a mandatory field for hashtag and optional field to add an image with the post. 
+This is the page users will see right after logging in. Here we have the option to create a new post with a mandatory field for hashtag and an optional field to add an image with the post. 
 
 ![alt text](https://github.com/Dola108/1Tag.github.io/blob/master/pix/postbox.PNG)
 
@@ -44,6 +44,7 @@ This is the page both users and non-users can see. But non-users do not have the
 ![alt text](https://github.com/Dola108/1Tag.github.io/blob/master/pix/tagboard_full_image.png)
 
 ## Admin Page
+
 Admins accepts delete requests, reviews flagged posts and deletes them. They can also send mails to users directly from the admin page.
 ![alt text](https://github.com/Dola108/1Tag.github.io/blob/master/pix/admin_page.PNG)
 
