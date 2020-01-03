@@ -1,6 +1,9 @@
 # 1Tag
 
-1Tag is a social discussion website. Assigning a hashtag in each post composed by the user is mandatory in the website. Based on the number of posts under a hastag top-most trending hashtags are shown separately. A post can have likes, dislikes, comments and replies like reddit. Based on these, popular posts are also ordered. User can browse posts under hashtags or popular posts with most duscussions or all posts based on recency.
+1Tag is a social discussion website. Assigning a hashtag in each post composed by the user is mandatory in the website. Based on the number of posts under a hastag, top-most trending hashtags are shown separately. A post can have likes, dislikes, comments and replies like reddit. Based on these, popular posts are also ordered. User can browse posts under-
+* a selected hashtags
+* popular posts with most duscussions
+* all posts based on recency.
 
 ### Rulebook
 
