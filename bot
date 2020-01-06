@@ -1,0 +1,106 @@
+#include<SoftwareSerial.h>
+#include<Servo.h>
+
+int sensorPin = A0; // select the input pin for the LDR
+int sensorValue = 7; // variable to store the value coming from the sensor
+int led = 9; // Output pin for LED
+int buzzer = 12; // Output pin for Buzzer
+int isGas = 0;
+int gasValue = 0;
+int servoPin = 10; 
+int angle = 0;
+boolean fire=false;
+Servo Servo1;
+
+void setup() {
+pinMode(led, OUTPUT);
+pinMode(buzzer,OUTPUT);
+pinMode(7, INPUT); 
+  Servo1.attach(10);
+Serial.begin(9600);
+}
+
+void loop()
+{
+
+gasValue = analogRead(A2);
+Serial.println(gasValue);
+  if (gasValue > 280) {
+    digitalWrite(led, HIGH);
+    digitalWrite(buzzer, HIGH);
+    for(angle = 0; angle < 180; angle += 1) 
+    { 
+      move_bot(angle,fire);
+      Serial.println(angle);
+      sensorValue = analogRead(sensorPin);
+      if (sensorValue < 100) {
+        digitalWrite(led,HIGH);
+        digitalWrite(buzzer,HIGH);
+        Servo1.write(angle);
+        fire=true;
+        delay(500); 
+      }
+      
+      digitalWrite(led,LOW);
+      digitalWrite(buzzer,LOW); 
+      delay(sensorValue); 
+    } 
+   
+    delay(1000);
+    
+    for(angle = 180; angle>=1; angle-=1)     
+    {                  
+      move_bot(angle,fire);              
+      sensorValue = analogRead(sensorPin);
+      if (sensorValue < 100) {
+        digitalWrite(led,HIGH);
+        digitalWrite(buzzer,HIGH);
+        Servo1.write(angle);
+        fire=true;
+        delay(500); 
+      }
+      
+      digitalWrite(led,LOW);
+      digitalWrite(buzzer,LOW); 
+      delay(sensorValue);            
+    } 
+
+    delay(1000);
+  }
+delay(1000); 
+}
+
+void move_bot(int ang, boolean f) {
+    if (ang==90)
+    {
+        digitalWrite(4, HIGH);
+        digitalWrite(5, LOW);
+        digitalWrite(6, HIGH);
+        digitalWrite(7, LOW);
+    }
+
+    else if (ang>90)
+    {
+        digitalWrite(4, HIGH);
+        digitalWrite(5, LOW);
+        digitalWrite(6, HIGH);
+        digitalWrite(7, HIGH);
+    }
+
+    else if (ang<90)
+    {
+        digitalWrite(4, HIGH);
+        digitalWrite(5, HIGH);
+        digitalWrite(6, HIGH);
+        digitalWrite(7, LOW);
+    }
+
+    else if(f) 
+    {
+        digitalWrite(4, LOW);
+        digitalWrite(5, LOW);
+        digitalWrite(6, LOW);
+        digitalWrite(7, LOW);
+    }
+    delay(300);
+}

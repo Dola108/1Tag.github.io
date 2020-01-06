@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="container">
+<textarea id="post" placeholder="Post your status..."></textarea>
+<div class="button_container"><span>Try Using: Nice Tutorial #HackBino</span><button id="button">Post</button></div>
+</div>
+<div id="hashtag_status"></div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function()
+    {
+    
+    $('body').on("click",'.heart',function()
+    {
+        
+        var a=$(this).attr("id");
+        var b=a.split("like");
+        var c=b[1];
+        var d=parseInt($("#likeCount"+c).html());
+        var e=$(this).attr("alt");
+       
+        if(e === 'like') 
+        {      
+        $("#likeCount"+c).html(d+1);
+        $(this).css("animation","heartAnimation 0.8s steps(28) 0s 1 normal").attr("alt","unlike");
+        $(this).css("background-position","right");
+        
+        }
+        else
+        {
+        $("#likeCount"+c).html(d-1);
+        $(this).css("animation","none").attr("alt","like");
+        $(this).css("background-position","left");
+        }
+    });
+    });
+</script>
+</body>
+</html>

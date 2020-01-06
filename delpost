@@ -1,0 +1,17 @@
+<?php
+	session_start();
+	include('connection.php');
+
+	if (!empty($_SESSION['id'])) {
+		$id = $_SESSION['id'];
+		$query = "DELETE FROM post WHERE id='".$_SESSION['id']."'";
+
+		unset($_SESSION['id']);
+
+		echo "<script>
+				alert('Post Deleted!!!');
+				window.location.href = 'dashboard.php';
+				exit;
+				</script>";
+	}
+?>

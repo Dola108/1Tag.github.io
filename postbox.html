@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1Tag</title>
+</head>
+<body>
+	<textarea maxlength="180" name="post" cols="90" rows="5" placeholder="Write a post..."></textarea>
+	<p id="pp"> </p>
+	<script type="text/javascript">
+		var textarea = document.querySelector("textarea");
+
+		textarea.addEventListener("input", function(){
+		    var maxlength = this.getAttribute("maxlength");
+		    var currentLength = this.value.length;
+
+		    if( currentLength >= maxlength ){
+		        document.getElementById('pp').innerText = "You have reached the maximum number of characters.";
+		    }else{
+		        document.getElementById('pp').innerText = maxlength - currentLength + "/" + maxlength; 
+		    }
+		});
+	</script>
+</body>
+</html>
